@@ -53,7 +53,7 @@ class ClassTransformerTests {
         dummyClass.version = 52;
         dummyClass.name = "test/DummyClass";
         dummyClass.fields.add(new FieldNode(Opcodes.ACC_PUBLIC, "dummyfield", "Ljava/lang/String;", null, null));
-        ClassWriter cw = new ClassWriter(Opcodes.ASM5);
+        ClassWriter cw = new ClassWriter(Launcher.ASM_VERSION);
         dummyClass.accept(cw);
         Whitebox.invokeMethod(transformStore, "addTransformer", new TransformTargetLabel("test.DummyClass", "dummyfield"), fieldNodeTransformer1(), dummyService);
         byte[] result1 = Whitebox.invokeMethod(classTransformer, "transform", new Class[]{byte[].class, String.class}, cw.toByteArray(), "test.DummyClass");

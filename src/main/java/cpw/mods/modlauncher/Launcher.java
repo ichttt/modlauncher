@@ -3,6 +3,7 @@ package cpw.mods.modlauncher;
 import cpw.mods.modlauncher.api.*;
 import cpw.mods.modlauncher.serviceapi.*;
 import org.apache.logging.log4j.LogManager;
+import org.objectweb.asm.Opcodes;
 
 import java.nio.file.Path;
 import java.util.*;
@@ -14,6 +15,7 @@ import static cpw.mods.modlauncher.LogMarkers.*;
  * Entry point for the ModLauncher.
  */
 public class Launcher {
+    public static final int ASM_VERSION = Opcodes.ASM7;
     public static Launcher INSTANCE;
     private final TypesafeMap blackboard;
     private final TransformationServicesHandler transformationServicesHandler;

@@ -48,7 +48,7 @@ public class ClassTransformer {
             return inputClass;
         }
 
-        ClassNode clazz = new ClassNode(Opcodes.ASM6);
+        ClassNode clazz = new ClassNode(Launcher.ASM_VERSION);
         Supplier<byte[]> digest;
         boolean empty;
         if (inputClass.length > 0) {
